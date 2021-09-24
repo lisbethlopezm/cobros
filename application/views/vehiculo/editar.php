@@ -8,7 +8,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item active">Nuevo Vehiculo</li>
+              <li class="breadcrumb-item active">Modificar Vehiculo</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -28,7 +28,7 @@
               <div class="col-md-12">    
                   <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Nuevo Vehiculo</h3>
+                <h3 class="card-title">Modificar Vehiculo</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -36,8 +36,8 @@
 
                 <div class="card-body">
                   <div class="form-group col-md-3">
-                    <label for="tipo">Tipo</label>
-                    <input type="text" name="idVehiculo" value="<?php echo $ve['idVehiculo']; ?>">
+                    <label for="tipo">Socio</label>
+                    <input type="hidden" name="idVehiculo" value="<?php echo $ve['idVehiculo']; ?>">
                     <select class="form-control select2" name="socio" style="width: 100%;">
                       <?php foreach ($socio as $row) { ?>
                         <option value="<?php echo $row['idSocio']; ?>"><?php echo $row['nombre'].' '.$row['primerApellido'].' '.$row['segundoApellido']; ?></option>
@@ -95,13 +95,16 @@
                     <input type="text" class="form-control" name="numeroMovil" value="<?php echo $ve['numeroMovil']; ?>">
                     <span class="text-danger"><?php echo form_error('numeroMovil');?></span>
                   </div>
-                  <div class="form-group row">
-                    <label for="archivo" class="col-sm-3 col-form-label">Foto</label>
-                      <div class="col-sm-5">
+                  <div class="form-group col-md-6">
+                    <label for="exampleInputFile">Foto</label>
+                    <div class="input-group">
+                      <div class="custom-file">
                         <input type="file" class="form-control-file" name="archivo" id="archivo">
-                        <span class="text-danger"><?php echo form_error('archivo');?></span>
+                        <input type="hidden" name="idVehiculo" value="<?php echo $ve['fotoVehiculo']; ?>">
                       </div>
                     </div>
+                  </div>
+
                 </div>
                 <!-- /.card-body -->
 

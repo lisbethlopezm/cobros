@@ -36,14 +36,15 @@ class Mensualidad extends CI_Controller{
         $this->formValidation();
 		if($this->form_validation->run())     
         {   
-            if ($this->Mensualidad_model->obtenerPagoMensualidadVehiculoMes($this->input->post('idVehiculo'),$this->input->post('mes'),$this->sacarMes($this->input->post('anio')))==0) {
+            if ($this->Mensualidad_model->obtenerPagoMensualidadVehiculoMes($this->input->post('idVehiculo'),$this->sacarMes($this->input->post('mes')),$this->input->post('anio'))==0) {
 
                 $datos = $this->datos();
 
                 $Mensualidad_id = $this->Mensualidad_model->guardarMensualidad($datos);
                 redirect('mensualidad/index');
             }else{
-                $data['mensaje'] = "¡Ya se realizó el cobro para el vehiculo este mes!";
+                $data['mensaje'] = "¡Ya se realizó el cobro para de este vehiculo el mes de ".$this->sacarMes($this->input->post('mes')).'!' ;
+                $data['vehiculo'] = $this->Vehiculo_model->todosLosvehiculos();
                 $this->load->view('layout/header');
                 $this->load->view('mensualidad/cobro',$data);
                 $this->load->view('layout/footer');
@@ -51,6 +52,7 @@ class Mensualidad extends CI_Controller{
         }
         else
         {            
+            $data['vehiculo'] = $this->Vehiculo_model->todosLosvehiculos();
             $this->load->view('layout/header');
             $this->load->view('mensualidad/cobro');
             $this->load->view('layout/footer');

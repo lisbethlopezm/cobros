@@ -33,6 +33,12 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+              <?php 
+                  if(!empty($mensaje)){
+                    echo '<span class="text-danger">'.$mensaje.'</span>';
+                  }
+
+                ?>
               <form method="post" action="<?php echo base_url();?>mensualidad/add">
                 <div class="card-body">
                   <div class="form-group col-md-6">

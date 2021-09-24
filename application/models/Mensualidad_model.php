@@ -25,7 +25,7 @@ class Mensualidad_model extends CI_Model
         $this->db->where("anio",$anio);
         $resultado = $this->db->get();
         $r = $resultado->row();
-        if ($resultado->num_rows() == 1) {
+        if ($resultado->num_rows() > 1) {
             return $r->idMensualidad;
         }else{
             return 0;
