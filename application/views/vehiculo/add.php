@@ -35,7 +35,7 @@
               <form method="post" action="<?php echo base_url();?>vehiculo/add" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="form-group col-md-3">
-                    <label for="tipo">Tipo</label>
+                    <label for="tipo">Socio</label>
 
                     <select class="form-control select2" name="socio" style="width: 100%;">
                       <?php foreach ($socio as $row) { ?>

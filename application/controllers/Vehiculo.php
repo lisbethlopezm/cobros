@@ -42,6 +42,7 @@ class Vehiculo extends CI_Controller{
         else
         {   
             $data['tipovehiculo'] = $this->TipoVehiculo_model->todotipovehiculos();
+            $data['socio'] = $this->Socio_model->todosLosSocios();
             $this->load->view('layout/header');
             $this->load->view('vehiculo/add',$data);
             $this->load->view('layout/footer');
@@ -96,7 +97,7 @@ class Vehiculo extends CI_Controller{
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('socio','Socio','required');
-        $this->form_validation->set_rules('placa','Placa','required|min_length[7]|max_length[10]|alpha_dash');
+        $this->form_validation->set_rules('placa','Placa','required|min_length[6]|max_length[10]|alpha_dash');
         $this->form_validation->set_rules('marca','Marca','required|min_length[4]|max_length[30]|alpha');
         $this->form_validation->set_rules('color','Color','required|min_length[4]|max_length[25]|alpha');
         $this->form_validation->set_rules('color','Color','required|min_length[4]|max_length[30]|alpha');

@@ -64,13 +64,7 @@
                                <li>
                                  <a href="<?php echo base_url().'mensualidad/modificar/'.$row['idMensualidad']; ?>"
                                   title="Modificar informacion" onClick="">
-                                   <i style="color:#555;" class="far fa-address-card"></i>  Modificar
-                                </a>
-                              </li>
-                              <li>
-                                 <a href="<?php echo base_url().'mensualidad/eliminarmensualidad/'.$row['idMensualidad']; ?>"
-                                  title="Eliminar informacion" onClick="">
-                                   <i style="color:red;" class="fas fa-backspace"></i>  Eliminar
+                                   <i style="color:#555;" class="far fa-address-card"></i>  Cancelar
                                 </a>
                               </li>
                       </ul>
