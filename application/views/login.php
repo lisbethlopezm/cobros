@@ -17,7 +17,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href=""><b>App</b>Web Cobros</a>
+    <a href=""><b>App</b>Collection</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
