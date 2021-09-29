@@ -103,8 +103,8 @@ class Vehiculo extends CI_Controller{
         $this->form_validation->set_rules('color','Color','required|min_length[4]|max_length[30]|alpha');
         $this->form_validation->set_rules('tipo','Tipo','required');
         $this->form_validation->set_rules('cilindrada','Cilindrada','required|max_length[50]');
-        $this->form_validation->set_rules('motor','Motor','required|min_length[1]|max_length[25]');
-        $this->form_validation->set_rules('chasis','Chasis','required|min_length[1]|max_length[50]');
+        $this->form_validation->set_rules('motor','Motor','required|min_length[10]|max_length[25]|numeric');
+        $this->form_validation->set_rules('chasis','Chasis','required|min_length[10]|max_length[50]');
         $this->form_validation->set_rules('numeroMovil','Numero de Movil','required|max_length[10]|numeric');
     }
 
